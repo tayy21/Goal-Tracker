@@ -1,0 +1,93 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/page_home_screen_1_ek1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp">
+
+
+				<View
+					android:id="@+id/_bg__group_ek1"
+					android:layout_width="419dp"
+					android:layout_height="734dp"
+					android:background="@drawable/_bg__group_ek1_shape"
+					app:layout_constraintEnd_toEndOf="parent"
+					tools:layout_editor_absoluteY="-1dp" />
+
+
+				<TextView
+					android:id="@+id/set_and_track_goals"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="64dp"
+					android:layout_marginTop="60dp"
+					android:text="@string/set_and_track_goals_string"
+					android:textColor="@color/set_and_track_goals_color"
+					android:textSize="34sp"
+					android:textStyle="bold"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<TextView
+					android:id="@+id/stay_organized_and_motivated"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="92dp"
+					android:layout_marginTop="152dp"
+					android:text="@string/stay_organized_and_motivated_string"
+					android:textColor="@color/set_and_track_goals_color"
+					android:textSize="14sp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<TextView
+					android:id="@+id/by_managing_your_goals_in_one_place_"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="92dp"
+					android:layout_marginTop="172dp"
+					android:text="@string/by_managing_your_goals_in_one_place__string"
+					android:textColor="@color/set_and_track_goals_color"
+					android:textSize="14sp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<ImageView
+					android:id="@+id/vector_ek2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="80dp"
+					android:layout_marginTop="236dp"
+					android:contentDescription="vector_ek2"
+					android:src="@drawable/vector_ek2"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<Button
+					android:id="@+id/start"
+					android:layout_width="180dp"
+					android:layout_height="55dp"
+					android:layout_marginStart="124dp"
+					android:layout_marginTop="572dp"
+					android:text="Start"
+					android:textColor="#FFFFFF"
+					android:background="@drawable/rounded_button"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+		</RelativeLayout>
+
+</HorizontalScrollView>

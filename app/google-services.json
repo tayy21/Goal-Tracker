@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "95447781212",
+    "project_id": "personalisedgt-9e210",
+    "storage_bucket": "personalisedgt-9e210.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95447781212:android:35c99e3903bcfd5dc27b99",
+        "android_client_info": {
+          "package_name": "com.example.goaltracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKUA1vipJHW29yHUs4oqN6n-6wkF4XS9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- home_screen_1 strings -->
+
+    <string name="app_name">Page 1</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="set_and_track_goals_string">Set and Track Goals</string>
+    <string name="stay_organized_and_motivated_string">Stay organized and motivated</string>
+    <string name="by_managing_your_goals_in_one_place__string">by managing your goals in one place.</string>
+    <string name="start_now_string">Start Now</string>
+</resources>

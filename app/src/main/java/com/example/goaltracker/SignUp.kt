@@ -7,10 +7,14 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.goaltracker.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.example.goaltracker.data.User
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseData: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +23,7 @@ class SignUp : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        firebaseData = FirebaseDatabase.getInstance().reference
 
         binding.SignUpButton.setOnClickListener {
             val email = binding.email.text.toString()
@@ -29,14 +34,16 @@ class SignUp : AppCompatActivity() {
                 if (pass == pass2) {
                     firebaseAuth.createUserWithEmailAndPassword(email , pass).addOnCompleteListener{
                         if (it.isSuccessful) {
-                                val intent = Intent(
-                                    this@SignUp,
-                                    SignIn::class.java
-                                )
-                                startActivity(intent)
-                            Toast.makeText(this , "successful" , Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(this , "unsuccessful" , Toast.LENGTH_SHORT).show()
+                            val userId = firebaseAuth.currentUser?.uid
+                            val user = User(userId, email)
+                            firebaseData.child("User").setValue(user)
+
+                            val intent = Intent(this@SignUp, SignIn::class.java)
+                            startActivity(intent)
+
+                            Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Unsuccessful", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }else{
@@ -47,10 +54,9 @@ class SignUp : AppCompatActivity() {
             }
         }
 
-        val startButton = findViewById<Button>(R.id.LoginButton)
+        val startButton = binding.LoginButton
 
-        // Set up click listener for the start button
-        startButton.setOnClickListener { // When the button is clicked, start the SignInActivity
+        startButton.setOnClickListener {
             val intent = Intent(
                 this@SignUp,
                 SignIn::class.java

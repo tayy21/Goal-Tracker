@@ -9,38 +9,36 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast;
+import com.example.goaltracker.databinding.ActivitySignInBinding
+import com.example.goaltracker.databinding.ActivitySignUpBinding
 
 
 class SignIn : AppCompatActivity() {
+    private lateinit var binding: ActivitySignInBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var loginButton: Button
-    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
 
-        mAuth = FirebaseAuth.getInstance()
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        emailEditText = findViewById(R.id.email)
-        passwordEditText = findViewById(R.id.password)
-        loginButton = findViewById(R.id.LoginButton)
+        firebaseAuth = FirebaseAuth.getInstance()
 
-        loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+        binding.LoginButton.setOnClickListener {
+            val email = binding.email.text.toString()
+            val password = binding.password.text.toString()
 
             // Check if email and password are not empty
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 // Attempt to sign in with email and password
-                mAuth.signInWithEmailAndPassword(email, password)
+                firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this@SignIn, OnCompleteListener<AuthResult> { task ->
                         if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(this@SignIn, "Authentication succeeded.", Toast.LENGTH_SHORT).show()
-                            // Here you can navigate to the next activity or perform any action you want.
+                            val intent = Intent(this@SignIn, HomePage::class.java)
+                            startActivity(intent)
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(this@SignIn, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -51,7 +49,7 @@ class SignIn : AppCompatActivity() {
             }
         }
 
-        val startButton = findViewById<Button>(R.id.SignUpButton)
+        val startButton = binding.SignUpButton
         startButton.setOnClickListener {
             val intent = Intent(this@SignIn, SignUp::class.java)
             startActivity(intent)

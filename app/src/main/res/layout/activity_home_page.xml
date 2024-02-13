@@ -18,125 +18,151 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/blue_background"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="160dp" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/second_blue_background"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="363dp" />
-
-    <TextView
-        android:id="@+id/GoodEvening"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="Good evening!"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="68dp" />
-
-    <Button
-        android:id="@+id/AddGoal"
-        android:layout_width="56dp"
-        android:layout_height="57dp"
-        android:background="@drawable/rounded_button"
-        android:text="+"
-        android:textColor="#ffffff"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="313dp"
-        tools:layout_editor_absoluteY="56dp" />
-
-    <TextView
-        android:id="@+id/TrackText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Track"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="187dp" />
-
-    <TextView
-        android:id="@+id/pTrack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Track your current progress with your goals"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="228dp" />
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="122dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blue_background" />
 
     <Button
         android:id="@+id/TrackButton"
         android:layout_width="92dp"
         android:layout_height="40dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="226dp"
         android:background="@drawable/rounded_button_white"
         android:text="Track"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="272dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView9"
+    <TextView
+        android:id="@+id/TrackText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/blue_background"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="481dp" />
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="141dp"
+        android:text="Track"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="332dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/second_blue_background" />
 
     <TextView
         android:id="@+id/todaysGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="343dp"
         android:text="Today's goals:"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ShowToday"
-        android:layout_width="77dp"
-        android:layout_height="36dp"
-        android:background="@drawable/rounded_button_white"
-        android:text="Show"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="384dp" />
+        android:id="@+id/AddGoal"
+        android:layout_width="56dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="317dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_button"
+        android:text="+"
+        android:textColor="#ffffff"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/GoodEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Good evening!"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="185dp"
+        android:text="Track your current progress with your goals"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="456dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blue_background" />
 
     <TextView
         android:id="@+id/AllGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="476dp"
         android:text="All Goals"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="500dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ShowToday"
+        android:layout_width="77dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="353dp"
+        android:background="@drawable/rounded_button_white"
+        android:text="Show"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/pGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="520dp"
         android:text="View all your goals here."
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="544dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ShowAll"
         android:layout_width="92dp"
         android:layout_height="40dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="564dp"
         android:background="@drawable/rounded_button_white"
         android:text="Show"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="588dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

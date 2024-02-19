@@ -120,25 +120,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvSubGoal"
+        android:id="@+id/tvImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:layout_marginTop="434dp"
-        android:text="subgoal:"
+        android:text="Image:"
         android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/AddSubgoal"
+        android:id="@+id/AddImage"
         android:layout_width="337dp"
         android:layout_height="61dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="479dp"
         android:background="@drawable/rounded_text_input_black"
-        android:text="+ Add a new subgoal"
+        android:text="+ Add a image"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -6,6 +6,7 @@ data class Goal(
     val deadline: String, // You can use Date or LocalDateTime if you prefer
     val category: String,
     val userId: String, // Associated user ID
+    val imageUrl: String,
 )
 
 data class SubGoal(

@@ -1,12 +1,12 @@
 package com.example.goaltracker.data
 
 data class Goal(
-    val title: String,
-    val description: String,
-    val deadline: String, // You can use Date or LocalDateTime if you prefer
-    val category: String,
-    val userId: String, // Associated user ID
-    val imageUrl: String,
+    val title: String = "",
+    val description: String = "",
+    val deadline: String = "",
+    val category: String = "",
+    val userId: String = "",
+    val imageUrl: String = "",
 )
 
 data class SubGoal(

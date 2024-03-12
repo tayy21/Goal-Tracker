@@ -54,30 +54,48 @@ class AddTask : AppCompatActivity() {
             val imagesRef = firebaseImg.reference.child("images").child(userId).child(filename)
             binding.AddButton.setOnClickListener {
                 if (selectedImageUri != null) {
-                    imagesRef.putFile(selectedImageUri)
-                }
-                val title = binding.goal.text.toString()
-                val desc = binding.goalDesc.text.toString()
-                val cata = binding.editCategory.text.toString()
-                val userId = firebaseAuth.currentUser?.uid.toString()
-                val deadline = if (binding.editTextDate.text.isEmpty()) {
-                    binding.editTextDate.hint.toString()
+                    val uploadTask = imagesRef.putFile(selectedImageUri)
+                    uploadTask.continueWithTask { task ->
+                        if (!task.isSuccessful) {
+                            task.exception?.let {
+                                throw it
+                            }
+                        }
+                        imagesRef.downloadUrl
+                    }.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val imageUrl = task.result.toString()
+
+                            val title = binding.goal.text.toString()
+                            val desc = binding.goalDesc.text.toString()
+                            val cata = binding.editCategory.text.toString()
+                            val userId = firebaseAuth.currentUser?.uid.toString()
+                            val deadline = if (binding.editTextDate.text.isEmpty()) {
+                                binding.editTextDate.hint.toString()
+                            } else {
+                                binding.editTextDate.text.toString()
+                            }
+
+                            if (title.isNotEmpty() && desc.isNotEmpty() && cata.isNotEmpty()) {
+                                val goal = Goal(title, desc, deadline, cata, userId, imageUrl)
+                                val newGoalRef = firebaseData.child("Goal").child(userId).push()
+                                newGoalRef.setValue(goal)
+
+                                val intent = Intent(this@AddTask, HomePage::class.java)
+                                startActivity(intent)
+
+                                Toast.makeText(this, "Goal successfully saved", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Unsuccessful, please try again", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            // Handle failures
+                            Toast.makeText(this, "Failed to upload image", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 } else {
-                    binding.editTextDate.text.toString()
-                }
-                val imageUrl = imagesRef.downloadUrl.toString()
-
-                if (title.isNotEmpty() && desc.isNotEmpty() && cata.isNotEmpty()) {
-                    val goal = Goal(title, desc, deadline, cata, userId, imageUrl)
-                    val newGoalRef = firebaseData.child("Goal").child(userId).push()
-                    newGoalRef.setValue(goal)
-
-                    val intent = Intent(this@AddTask, HomePage::class.java)
-                    startActivity(intent)
-
-                    Toast.makeText(this, "Goal successfully saved", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "Unsuccessful, please try again", Toast.LENGTH_SHORT).show()
+                    // Handle case when no image is selected
+                    Toast.makeText(this, "No image selected", Toast.LENGTH_SHORT).show()
                 }
             }
         }

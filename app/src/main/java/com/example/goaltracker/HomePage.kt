@@ -23,5 +23,10 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this@HomePage, ViewAll::class.java)
             startActivity(intent)
         }
+
+        binding.ShowToday.setOnClickListener {
+            val intent = Intent(this@HomePage, ViewToday::class.java)
+            startActivity(intent)
+        }
     }
 }

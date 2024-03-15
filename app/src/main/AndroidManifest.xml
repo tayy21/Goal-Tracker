@@ -9,6 +9,12 @@
         android:allowBackup="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Details"
+            android:exported="false" />
+        <activity
+            android:name=".ViewToday"
+            android:exported="false" />
+        <activity
             android:name=".ViewAll"
             android:exported="false" />
         <activity

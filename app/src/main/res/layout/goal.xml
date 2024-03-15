@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/dark_grey"
+    app:cardBackgroundColor="@color/dark_grey"
     app:cardCornerRadius="10dp"
     app:cardPreventCornerOverlap="false"
     android:clipToPadding="false"
@@ -25,6 +26,7 @@
             android:id="@+id/imageGoal"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:src="@drawable/placeholder_image"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -38,17 +40,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Title: "
+                android:textColor="@color/white"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/textCata"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="Category: "
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/textDead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="Deadline: "
                 android:textSize="18sp"/>
 

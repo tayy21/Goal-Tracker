@@ -31,8 +31,9 @@ class ViewAll : AppCompatActivity() {
         // Setup RecyclerView
         getGoals { goalList ->
             goalAdapter = GoalAdapter(goalList) { goal ->
-                // Handle item click
-                // Here, you can navigate to a detailed view of the goal or perform any other action
+                val intent = Intent(this@ViewAll, Details::class.java)
+                intent.putExtra("goalId", goal.id)
+                startActivity(intent)
                 Toast.makeText(this@ViewAll, "Clicked on goal: ${goal.title}", Toast.LENGTH_SHORT).show()
             }
 
@@ -54,8 +55,12 @@ class ViewAll : AppCompatActivity() {
         databaseReference.child("Goal").child(auth.currentUser?.uid ?: "").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (goalSnapshot in dataSnapshot.children) {
+                    val key = goalSnapshot.key
                     val goal = goalSnapshot.getValue(Goal::class.java)
-                    goal?.let { goalList.add(it) }
+                    goal?.let {
+                        it.id = key
+                        goalList.add(it)
+                    }
                 }
 
                 // Invoke the callback with the goalList

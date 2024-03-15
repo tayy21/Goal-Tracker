@@ -3,10 +3,7 @@ package com.example.goaltracker
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.goaltracker.Adapter.GoalAdapter
 import com.example.goaltracker.data.Goal
@@ -19,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.*
 import java.text.SimpleDateFormat
-import androidx.core.content.ContextCompat
 
 class ViewToday : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -46,8 +42,9 @@ class ViewToday : AppCompatActivity() {
                 startActivity(intent)
             } else {
                 goalAdapter = GoalAdapter(goalList) { goal ->
-                    // Handle item click
-                    // Here, you can navigate to a detailed view of the goal or perform any other action
+                    val intent = Intent(this@ViewToday, Details::class.java)
+                    intent.putExtra("goalId", goal.id)
+                    startActivity(intent)
                     Toast.makeText(this@ViewToday, "Clicked on goal: ${goal.title}", Toast.LENGTH_SHORT).show()
                 }
 
@@ -70,10 +67,14 @@ class ViewToday : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (goalSnapshot in dataSnapshot.children) {
                     val goal = goalSnapshot.getValue(Goal::class.java)
+                    val key = goalSnapshot.key
                     if (goal != null) {
                         // Filter tasks for today
                         if (goal.deadline == getCurrentDate()) {
-                            goalList.add(goal)
+                            goal?.let {
+                                it.id = key
+                                goalList.add(it)
+                            }
                         }
                     }
                 }

@@ -79,6 +79,7 @@ class AddTask : AppCompatActivity() {
                             if (title.isNotEmpty() && desc.isNotEmpty() && cata.isNotEmpty()) {
                                 val goal = Goal(title, desc, deadline, cata, userId, imageUrl)
                                 val newGoalRef = firebaseData.child("Goal").child(userId).push()
+                                val goalId = newGoalRef.key
                                 newGoalRef.setValue(goal)
 
                                 val intent = Intent(this@AddTask, HomePage::class.java)

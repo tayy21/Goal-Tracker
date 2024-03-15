@@ -34,7 +34,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/rounded_text_input"
-        android:textColor="#636363"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/white"
         android:textColorHint="#636363"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -60,50 +62,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="298dp"
-        android:text="Deadline:"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/editTextDate"
-        android:layout_width="210dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="298dp"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/rounded_text_input"
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="360dp"
-        android:text="Category:"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/editCategory"
-        android:layout_width="210dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="362dp"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="369dp"
         android:background="@drawable/rounded_text_input"
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -131,13 +113,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/DeleteButton"
+        android:id="@+id/BackButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="575dp"
         android:background="@drawable/rounded_button"
-        android:text="Delete"
+        android:text="Back"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,22 +1,11 @@
 package com.example.goaltracker.Adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import com.example.goaltracker.data.Goal
 import androidx.recyclerview.widget.RecyclerView
-import androidx.vectordrawable.R
-import androidx.vectordrawable.animated.R.drawable
 import com.example.goaltracker.databinding.GoalBinding
 import com.bumptech.glide.Glide
-import android.content.Intent
-import android.telecom.Call
-import com.example.goaltracker.Details
 
 
 class GoalAdapter(
@@ -24,7 +13,7 @@ class GoalAdapter(
     private val onItemClick: (Goal) -> Unit,
 
 
-) : RecyclerView.Adapter<GoalAdapter.ViewHolder>() {
+    ) : RecyclerView.Adapter<GoalAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: GoalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(goal: Goal) {
@@ -39,8 +28,6 @@ class GoalAdapter(
                         .into(imageGoal)
                 }
                 viewButton.setOnClickListener {
-                    val intent = Intent(itemView.context, Details::class.java)
-                    itemView.context.startActivity(intent)
                     onItemClick(goal)
                 }
             }

@@ -7,6 +7,7 @@ data class Goal(
     val category: String = "",
     val userId: String = "",
     val imageUrl: String = "",
+    var id: String? = null,
 )
 
 data class SubGoal(

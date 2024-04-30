@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/textgoal"
         android:layout_width="348dp"
         android:layout_height="54dp"
@@ -35,7 +35,6 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/rounded_text_input"
         android:paddingLeft="20dp"
-        android:paddingTop="15dp"
         android:textColor="@color/white"
         android:textColorHint="#636363"
         android:textSize="16sp"
@@ -43,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/goalDesc"
         android:layout_width="347dp"
         android:layout_height="152dp"
@@ -61,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/editTextDate"
         android:layout_width="348dp"
         android:layout_height="54dp"
@@ -71,11 +70,10 @@
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
         android:paddingLeft="20dp"
-        android:paddingTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/editCategory"
         android:layout_width="348dp"
         android:layout_height="54dp"
@@ -85,7 +83,6 @@
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
         android:paddingLeft="20dp"
-        android:paddingTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,19 +110,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BackButton"
+        android:id="@+id/SaveButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="575dp"
         android:background="@drawable/rounded_button"
-        android:text="Back"
+        android:text="Save"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ProgressButton"
+        android:id="@+id/ProgButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
         android:layout_marginStart="233dp"

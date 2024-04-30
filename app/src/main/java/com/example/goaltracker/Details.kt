@@ -43,10 +43,10 @@ class Details : AppCompatActivity() {
                         if (goal != null) {
                             // Populate the views with goal details
                             binding.apply {
-                                textgoal.text = "Title: ${goal.title}"
-                                editCategory.text = "Category: ${goal.category}"
-                                editTextDate.text = "Deadline: ${goal.deadline}"
-                                goalDesc.text = "Description: ${goal.description}"
+                                textgoal.setText(goal.title)
+                                editCategory.setText(goal.category)
+                                editTextDate.setText(goal.deadline)
+                                goalDesc.setText(goal.description)
 
                                 // Load the image using Glide
                                 if (!goal.imageUrl.isNullOrEmpty()) {
@@ -60,13 +60,37 @@ class Details : AppCompatActivity() {
                                 }
                             }
                         }
+                        binding.SaveButton.setOnClickListener {
+                            val title = binding.textgoal.text.toString()
+                            val desc = binding.goalDesc.text.toString()
+                            val cata = binding.editCategory.text.toString()
+                            val userId = auth.currentUser?.uid.toString()
+                            val deadline = binding.editTextDate.text.toString()
+                            val imageUrl = if (goal?.imageUrl.isNullOrEmpty()) {
+                                ""
+                            } else {
+                                goal!!.imageUrl.toString()
+                            }
+
+
+                            if (title.isNotEmpty() && desc.isNotEmpty() && cata.isNotEmpty()) {
+                                val goal = Goal(title, desc, deadline, cata, userId, imageUrl)
+                                val newGoalRef = databaseReference.child("Goal").child(userId).child(goalId.toString())
+                                newGoalRef.setValue(goal)
+
+
+                                Toast.makeText(this, "Goal successfully saved", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Unsuccessful, please try again", Toast.LENGTH_SHORT).show()
+                            }
+                        }
                     }
                 }.addOnFailureListener {
                     Toast.makeText(this@Details, "Failed to load goal details", Toast.LENGTH_SHORT).show()
                 }
         }
-        binding.BackButton.setOnClickListener {
-            finish()
-        }
+
+
+
     }
 }

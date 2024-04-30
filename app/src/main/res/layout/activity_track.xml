@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Track">
+
+    <View
+        android:id="@+id/_bg__group_ek1"
+        android:layout_width="421dp"
+        android:layout_height="739dp"
+        android:background="@drawable/_bg__group_ek1_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <TextView
+        android:id="@+id/tvGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="21dp"
+        android:text="Goal:"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textgoal"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_text_input"
+        android:paddingLeft="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#636363"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/goalDesc"
+        android:layout_width="347dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/rounded_text_input_black"
+        android:gravity="top|start"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="360dp"
+        android:layout_height="55dp"
+        android:max="100"
+        android:progress="0"
+        android:thumbTint="#AF0DD5"
+        android:progressTint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:foregroundTint="#FFFFFF"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="302dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

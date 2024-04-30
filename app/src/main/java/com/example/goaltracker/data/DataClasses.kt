@@ -16,7 +16,7 @@ data class SubGoal(
     val title: String,
     val description: String,
     val deadline: String, // You can use Date or LocalDateTime if you prefer
-    val isCompleted: Boolean = false
+    val imageUrl: String = "",
 )
 
 data class User(

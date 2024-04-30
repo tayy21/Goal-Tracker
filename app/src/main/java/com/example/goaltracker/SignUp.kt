@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.goaltracker.data.Goal
 import com.example.goaltracker.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -35,8 +36,13 @@ class SignUp : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email , pass).addOnCompleteListener{
                         if (it.isSuccessful) {
                             val userId = firebaseAuth.currentUser?.uid
-                            val user = User(userId, email)
-                            firebaseData.child("User").setValue(user)
+                            val email = firebaseAuth.currentUser?.email
+
+                            if (userId != null && email != null) {
+                                val user = User(userId, email)
+                                val userRef = firebaseData.child("users").child(userId)
+                                userRef.child("email").setValue(user)
+                            }
 
                             val intent = Intent(this@SignUp, SignIn::class.java)
                             startActivity(intent)

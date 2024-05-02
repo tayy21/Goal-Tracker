@@ -53,6 +53,12 @@ class TrackDetails : AppCompatActivity() {
                 }
         }
 
+        binding.BackButton.setOnClickListener {
+            val intent = Intent(this@TrackDetails, TrackAll::class.java)
+            intent.putExtra("goalId", goalId)
+            startActivity(intent)
+        }
+
     }
 
     private fun getProgressForGoal() {

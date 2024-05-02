@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_grey"
+    app:cardBackgroundColor="@color/dark_grey"
+    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="false"
+    android:clipToPadding="false"
+    app:elevation="4dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/imageGoal"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/placeholder_image"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title: "
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+
+            <Button
+                android:id="@+id/viewButton"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Click to Track"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

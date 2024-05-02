@@ -84,6 +84,19 @@ class Details : AppCompatActivity() {
                                 Toast.makeText(this, "Unsuccessful, please try again", Toast.LENGTH_SHORT).show()
                             }
                         }
+
+                        binding.ProgButton.setOnClickListener {
+                            val intent = Intent(this@Details, Track::class.java)
+                            intent.putExtra("goalId", goalId)
+                            startActivity(intent)
+                        }
+
+                        binding.DelButton.setOnClickListener {
+                            val intent = Intent(this@Details, Delete::class.java)
+                            intent.putExtra("goalId", goalId)
+                            startActivity(intent)
+                        }
+
                     }
                 }.addOnFailureListener {
                     Toast.makeText(this@Details, "Failed to load goal details", Toast.LENGTH_SHORT).show()
@@ -93,4 +106,6 @@ class Details : AppCompatActivity() {
 
 
     }
+
+
 }

@@ -15,6 +15,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="-1dp" />
 
+    <Button
+        android:id="@+id/DelButton"
+        android:layout_width="146dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="528dp"
+        android:background="@drawable/rounded_button"
+        android:text="Delete"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvGoal"
         android:layout_width="wrap_content"
@@ -102,8 +114,8 @@
         android:id="@+id/imageGoal"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="448dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="440dp"
         android:scaleType="centerCrop"
         android:src="@drawable/placeholder_image"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +125,8 @@
         android:id="@+id/SaveButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="528dp"
         android:background="@drawable/rounded_button"
         android:text="Save"
         android:textColor="@color/white"
@@ -125,8 +137,8 @@
         android:id="@+id/ProgButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="233dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="448dp"
         android:background="@drawable/rounded_button"
         android:text="Track"
         android:textColor="@color/white"

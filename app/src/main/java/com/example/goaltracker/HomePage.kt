@@ -28,5 +28,10 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this@HomePage, ViewToday::class.java)
             startActivity(intent)
         }
+
+        binding.TrackButton.setOnClickListener {
+            val intent = Intent(this@HomePage, TrackAll::class.java)
+            startActivity(intent)
+        }
     }
 }

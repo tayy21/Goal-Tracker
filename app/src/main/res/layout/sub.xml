@@ -64,7 +64,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/white"
-                android:text="Click to view" />
+                android:text="Click to view sub Goals" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

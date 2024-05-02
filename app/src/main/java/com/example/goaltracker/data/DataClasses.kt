@@ -10,6 +10,16 @@ data class Goal(
     var id: String? = null,
 )
 
+data class SubGoal(
+    val title: String = "",
+    val description: String = "",
+    val deadline: String = "",
+    val userId: String = "",
+    val imageUrl: String = "",
+    var goalId: String? = null,
+    var id: String? = null,
+)
+
 data class User(
     val userId: String? = null,
     val email: String,

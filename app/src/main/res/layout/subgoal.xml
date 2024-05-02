@@ -42,13 +42,7 @@
                 android:text="Title: "
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
-            <TextView
-                android:id="@+id/textCata"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Category: "
-                android:textSize="18sp"/>
+
             <TextView
                 android:id="@+id/textDead"
                 android:layout_width="wrap_content"

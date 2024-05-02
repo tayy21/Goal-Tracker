@@ -14,14 +14,31 @@
         android:layout_marginBottom="16dp">
 
         <TextView
-            android:id="@+id/textViewWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Sub Goals"
+            android:id="@+id/textgoal"
+            android:layout_width="290dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/rounded_text_input"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="#636363"
+            android:paddingTop="10dp"
+            android:hint="test"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/AddGoal"
+            android:layout_width="56dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="317dp"
+            android:background="@drawable/rounded_button"
+            android:text="+"
             android:textColor="#ffffff"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </RelativeLayout>
@@ -33,7 +50,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/sub"
+        tools:listitem="@layout/subgoal"
         android:alpha="0.7"/>
 
     <Button

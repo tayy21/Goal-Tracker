@@ -52,21 +52,32 @@
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="496dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/second_blue_background" />
 
     <TextView
-        android:id="@+id/todaysGoals"
+        android:id="@+id/subGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="343dp"
-        android:text="Today's goals:"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="508dp"
+        android:text="Sub goals:"
         android:textColor="#ffffff"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ShowToday"
+        android:layout_width="77dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="516dp"
+        android:background="@drawable/rounded_button_white"
+        android:text="Show"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,41 +124,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="456dp"
+        android:layout_marginTop="308dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blue_background" />
 
     <TextView
-        android:id="@+id/AllGoals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="476dp"
-        android:text="All Goals"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ShowToday"
-        android:layout_width="77dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="270dp"
-        android:layout_marginTop="353dp"
-        android:background="@drawable/rounded_button_white"
-        android:text="Show"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/pGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="372dp"
         android:text="View all your goals here."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,9 +145,22 @@
         android:layout_width="92dp"
         android:layout_height="40dp"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="564dp"
+        android:layout_marginTop="412dp"
         android:background="@drawable/rounded_button_white"
         android:text="Show"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/AllGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="328dp"
+        android:text="All Goals"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

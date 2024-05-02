@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTask">
+    tools:context=".Details">
 
     <View
         android:id="@+id/_bg__group_ek1"
@@ -27,16 +28,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/goal"
+        android:id="@+id/textgoal"
         android:layout_width="348dp"
         android:layout_height="54dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/rounded_text_input"
-        android:hint="Enter goal title"
-        android:inputType="text"
         android:paddingLeft="20dp"
-        android:textColor="#636363"
+        android:textColor="@color/white"
         android:textColorHint="#636363"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -51,11 +50,9 @@
         android:layout_marginTop="128dp"
         android:background="@drawable/rounded_text_input_black"
         android:gravity="top|start"
-        android:hint="Enter goal Description"
-        android:inputType="textMultiLine"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:paddingTop="10dp"
+        android:paddingRight="20dp"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         android:textSize="16sp"
@@ -63,59 +60,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvDeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="298dp"
-        android:text="Deadline:"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editTextDate"
-        android:layout_width="210dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="298dp"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/rounded_text_input"
-        android:paddingLeft="20dp"
-        android:ems="10"
-        android:hint=""
-        android:inputType="date"
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
+        android:paddingLeft="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="362dp"
-
-        android:text="Category:"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editCategory"
-        android:layout_width="210dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="362dp"
-        android:background="@drawable/rounded_text_input"
-        android:paddingLeft="20dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="#ffffff"
+    <ImageView
+        android:id="@+id/imageGoal"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="376dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,8 +88,8 @@
         android:id="@+id/tvImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="434dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="384dp"
         android:text="Image:"
         android:textColor="#ffffff"
         android:textSize="18sp"
@@ -132,24 +97,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/AddImage"
-        android:layout_width="337dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="479dp"
-        android:background="@drawable/rounded_text_input_black"
-        android:text="+ Add a image"
+        android:id="@+id/DelButton"
+        android:layout_width="146dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/rounded_button"
+        android:text="Delete"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/BackButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="544dp"
         android:background="@drawable/rounded_button"
         android:text="Back"
         android:textColor="@color/white"
@@ -157,11 +121,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/AddButton"
+        android:id="@+id/SaveButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="233dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="480dp"
         android:background="@drawable/rounded_button"
         android:text="Save"
         android:textColor="@color/white"

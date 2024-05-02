@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTask">
+    tools:context=".AddSubGoal">
 
     <View
         android:id="@+id/_bg__group_ek1"
@@ -15,14 +16,39 @@
         tools:layout_editor_absoluteY="-1dp" />
 
     <TextView
-        android:id="@+id/tvGoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textgoal"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="21dp"
-        android:text="Goal:"
-        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_text_input"
+        android:hint="test"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#636363"
         android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/goalDesc"
+        android:layout_width="347dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/rounded_text_input_black"
+        android:gravity="top|start"
+        android:hint="Enter goal Description"
+        android:inputType="textMultiLine"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +57,7 @@
         android:layout_width="348dp"
         android:layout_height="54dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="124dp"
         android:background="@drawable/rounded_text_input"
         android:hint="Enter goal title"
         android:inputType="text"
@@ -43,32 +69,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/goalDesc"
-        android:layout_width="347dp"
-        android:layout_height="152dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
-        android:background="@drawable/rounded_text_input_black"
-        android:gravity="top|start"
-        android:hint="Enter goal Description"
-        android:inputType="textMultiLine"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvDeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="360dp"
         android:text="Deadline:"
         android:textColor="#ffffff"
         android:textSize="18sp"
@@ -79,41 +85,13 @@
         android:id="@+id/editTextDate"
         android:layout_width="210dp"
         android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="360dp"
         android:background="@drawable/rounded_text_input"
-        android:paddingLeft="20dp"
         android:ems="10"
         android:hint=""
         android:inputType="date"
-        android:textColor="@color/white"
-        android:textColorHint="#ffffff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="362dp"
-
-        android:text="Category:"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editCategory"
-        android:layout_width="210dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="362dp"
-        android:background="@drawable/rounded_text_input"
         android:paddingLeft="20dp"
-        android:ems="10"
-        android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,8 +101,8 @@
         android:id="@+id/tvImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="434dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="420dp"
         android:text="Image:"
         android:textColor="#ffffff"
         android:textSize="18sp"
@@ -135,21 +113,20 @@
         android:id="@+id/AddImage"
         android:layout_width="337dp"
         android:layout_height="61dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="479dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="468dp"
         android:background="@drawable/rounded_text_input_black"
         android:text="+ Add a image"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/BackButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="564dp"
         android:background="@drawable/rounded_button"
         android:text="Back"
         android:textColor="@color/white"
@@ -160,11 +137,23 @@
         android:id="@+id/AddButton"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginStart="233dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="564dp"
         android:background="@drawable/rounded_button"
         android:text="Save"
         android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:text="Sub Goal:"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -3,30 +3,21 @@ package com.example.goaltracker
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.goaltracker.Adapter.GoalAdapter
 import com.example.goaltracker.data.Goal
 import com.example.goaltracker.data.ProgressLog
-import com.example.goaltracker.databinding.ActivityDeleteBinding
 import com.example.goaltracker.databinding.ActivityTrackDetailsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.*
-import com.github.mikephil.*
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.components.Description
 import android.util.Log
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.formatter.ValueFormatter
+
 
 class TrackDetails : AppCompatActivity() {
     private lateinit var binding: ActivityTrackDetailsBinding
@@ -67,7 +58,6 @@ class TrackDetails : AppCompatActivity() {
     private fun getProgressForGoal() {
         val progressList = mutableListOf<ProgressLog>()
         val goalId = intent.getStringExtra("goalId")
-        Log.d("GoalId", "GoalId is not null: $goalId")
 
         firebaseData.child("Progress").child(firebaseAuth.currentUser?.uid ?: "").child(goalId.toString()).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -79,10 +69,13 @@ class TrackDetails : AppCompatActivity() {
                         progressList.add(progressData)
                     }
                 }
-                for (progress in progressList) {
-                    Log.d("ProgressLog", "ID: ${progress.id}, Progress: ${progress.progress}")
+                if (progressList.isEmpty()) {
+                    Toast.makeText(this@TrackDetails, "No tracking for this goal", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@TrackDetails, TrackAll::class.java)
+                    startActivity(intent)
+                } else {
+                    displayLineChart(progressList)
                 }
-                displayLineChart(progressList)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

@@ -1,5 +1,6 @@
 package com.example.goaltracker
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -95,6 +96,12 @@ class Track : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Unsuccessful, please try again", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.BackButton.setOnClickListener {
+            val intent = Intent(this@Track, Details::class.java)
+            intent.putExtra("goalId", goalId)
+            startActivity(intent)
         }
     }
 }

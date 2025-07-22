@@ -27,29 +27,29 @@ Set clear objectives, break them into milestones, and track your progress live. 
 The app's user interface was carefully planned and prototyped in **Figma** before development began. This helped ensure a clean layout and smooth user experience.
 
 ### Figma Design
-![Figma Design](pgt screenshots/figma.png)
+![Figma Design](pgt_screenshots/figma.png)
 
 ---
 
 ## 📱 Screenshots
 
 ### Screenshot 1
-![Screenshot 1](pgt screenshots/1.png)
+![Screenshot 1](pgt_screenshots/1.png)
 
 ### Screenshot 2
-![Screenshot 2](pgt screenshots/2.png)
+![Screenshot 2](pgt_screenshots/2.png)
 
 ### Screenshot 3
-![Screenshot 3](pgt screenshots/3.png)
+![Screenshot 3](pgt_screenshots/3.png)
 
 ### Screenshot 4
-![Screenshot 4](pgt screenshots/4.png)
+![Screenshot 4](pgt_screenshots/4.png)
 
 ### Screenshot 5
-![Screenshot 5](pgt screenshots/5.png)
+![Screenshot 5](pgt_screenshots/5.png)
 
 ### Screenshot 6
-![Screenshot 6](pgt screenshots/6.png)
+![Screenshot 6](pgt_screenshots/6.png)
 
 ---
 
